@@ -1,0 +1,32 @@
+{
+  "name": "nestgram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+		"nest",
+		"nestjs",
+		"nestgram",
+		"nestjs-module",
+		"telegram",
+		"telegraf",
+		"telegram bot",
+		"telegram bot api",
+		"bot",
+		"bot api",
+		"bot framework"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/GlobalartInc/nestgram"
+	},
+  "author": "GlobalArt, Inc",
+  "license": "MIT",
+  "devDependencies": {
+		"release-it": "17.4.1",
+		"typescript": "5.5.3"
+	}
+}
