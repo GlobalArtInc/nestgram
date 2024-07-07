@@ -5,7 +5,7 @@ import { Guard, MaybeArray, NonemptyReadonlyArray } from 'telegraf/typings/core/
 import { UpdateType } from 'telegraf/typings/telegram-types';
 
 @Injectable()
-export abstract class BaseHandler<Filter extends UpdateType | Guard<Context['update']>> {
+export abstract class BaseHandler<Filter extends UpdateType> {
   @Inject(Telegraf)
   private readonly client: Telegraf;
 

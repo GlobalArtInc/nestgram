@@ -4,14 +4,16 @@ import { NestGramModuleOptions } from './nestgram-options.interface';
 import { Telegraf } from 'telegraf';
 import * as ProvidersMap from './providers';
 import { ListenersModule } from './listeners/listeners.module';
+import { ExplorerService } from './nestgram-explorer.service';
+import { DiscoveryModule } from '@nestjs/core';
 
 const Providers = Object.values(ProvidersMap);
 
 @Global()
 @Module({
-  imports: [ListenersModule],
-  providers: [...Providers],
-  exports: [ListenersModule, ...Providers],
+  imports: [DiscoveryModule, ListenersModule],
+  providers: [ExplorerService, ...Providers],
+  exports: [ListenersModule, ExplorerService, ...Providers],
 })
 export class NestGramModule extends ConfigurableModuleClass implements OnApplicationBootstrap, OnApplicationShutdown {
   public constructor(

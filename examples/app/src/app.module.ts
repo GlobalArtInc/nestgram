@@ -6,7 +6,7 @@ import { NestGramModule } from '../../../packages/core';
 @Module({
   imports: [
     NestGramModule.forRoot({
-      token: process.env.TG_TOKEN,
+      token: '7261491149:AAEPXNCO6H5LZCFK7-jJW-bOVCY3i8Uv0c0',
     }),
   ],
   controllers: [AppController],

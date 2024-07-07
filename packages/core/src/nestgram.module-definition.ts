@@ -8,5 +8,5 @@ export const {
   ASYNC_OPTIONS_TYPE: NESTGRAM_ASYNC_OPTIONS_TYPE,
 } = new ConfigurableModuleBuilder<NestGramModuleOptions>()
   .setClassMethodName('forRoot')
-  .setFactoryMethodName('createNestCordOptions')
+  .setFactoryMethodName('createNestGramOptions')
   .build();
