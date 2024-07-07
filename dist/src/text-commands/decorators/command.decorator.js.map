@@ -1,0 +1,1 @@
+{"version":3,"file":"command.decorator.js","sourceRoot":"","sources":["../../../../packages/core/src/text-commands/decorators/command.decorator.ts"],"names":[],"mappings":";;;AAAA,wEAA+E;AAC/E,uCAAyC;AAM5B,QAAA,WAAW,GAAG,gBAAS,CAAC,eAAe,CAAoC;IACtF,SAAS,EAAE,CAAC,OAAoB,EAAE,EAAE,CAAC,IAAI,8CAAoB,CAAC,OAAO,CAAC;CACvE,CAAC,CAAC"}
