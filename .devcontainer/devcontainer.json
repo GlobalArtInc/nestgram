@@ -1,0 +1,32 @@
+{
+	"name": "NestGram",
+	
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/pnpm:2": {},
+		"ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {}
+	},
+
+	"portsAttributes": {
+		"3000": {
+			"label": "nestgram-docs",
+			"onAutoForward": "notify"
+		}
+	},
+	"forwardPorts": [
+		3000
+	],
+
+	"postCreateCommand": "/workspaces/nestgram/.devcontainer/post-create.sh",
+	
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"rvest.vs-code-prettier-eslint"
+			]
+		}
+	},
+	
+	"remoteUser": "root"
+}

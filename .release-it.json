@@ -1,0 +1,21 @@
+{
+  "plugins": {
+    "release-it-lerna-changelog": {
+      "infile": "CHANGELOG.md"
+    }
+  },
+  "git": {
+		"commitMessage": "chore: release v${version}",
+		"requireUpstream": false,
+    "tagName": "v${version}",
+    "requireCleanWorkingDir": true,
+    "requireBranch": "main"
+  },
+  "github": {
+    "release": true,
+    "assets": null
+  },
+  "npm": {
+    "publish": true
+  }
+}

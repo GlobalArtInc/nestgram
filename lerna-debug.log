@@ -1,0 +1,40 @@
+0 silly input [ 'publish' ]
+1 silly flags {
+1 silly flags   _: [ 'publish' ],
+1 silly flags   'reject-cycles': false,
+1 silly flags   rejectCycles: false,
+1 silly flags   exact: true,
+1 silly flags   'force-publish': true,
+1 silly flags   forcePublish: true,
+1 silly flags   access: 'public',
+1 silly flags   m: 'chore(@nestjs) publish %s release',
+1 silly flags   message: 'chore(@nestjs) publish %s release'
+1 silly flags }
+2 verbose rootPath /home/rozmarinus/development/nestgram
+3 info version 2.11.0
+4 silly isInitialized
+5 silly isInitialized true
+6 silly existsSync /home/rozmarinus/development/nestgram/VERSION
+7 silly initialize attempt
+8 info current version 1.0.0
+9 silly isDetachedHead
+10 silly getCurrentBranch
+11 verbose getCurrentBranch main
+12 verbose isDetachedHead false
+13 silly getCurrentBranch
+14 verbose getCurrentBranch main
+15 silly getUpdates
+16 info Checking for updated packages...
+17 silly hasTags
+18 verbose hasTags true
+19 silly getLastTag
+20 error initialize caught error
+21 error Error: fatal: No tags can describe '4bc9b7779de6ecf1c032bdeb23382f7fa12a93de'.
+21 error Try --always, or create some tags.
+21 error
+21 error     at module.exports.sync (/home/rozmarinus/development/nestgram/node_modules/.pnpm/execa@0.8.0/node_modules/execa/index.js:303:26)
+21 error     at Function.execSync (/home/rozmarinus/development/nestgram/node_modules/.pnpm/lerna@2.11.0/node_modules/lerna/lib/ChildProcessUtilities.js:59:30)
+21 error     at Function.getLastTag (/home/rozmarinus/development/nestgram/node_modules/.pnpm/lerna@2.11.0/node_modules/lerna/lib/GitUtilities.js:162:53)
+21 error     at UpdatedPackagesCollector.collectUpdatedPackages (/home/rozmarinus/development/nestgram/node_modules/.pnpm/lerna@2.11.0/node_modules/lerna/lib/UpdatedPackagesCollector.js:112:42)
+21 error     at UpdatedPackagesCollector.getUpdates (/home/rozmarinus/development/nestgram/node_modules/.pnpm/lerna@2.11.0/node_modules/lerna/lib/UpdatedPackagesCollector.js:88:35)
+21 error     at PublishCommand.initialize (/home/rozmarinus/development/nestgram/node_modules/.pnpm/lerna@2.11.0/node_modules/lerna/lib/commands/PublishCommand.js:275:67)
