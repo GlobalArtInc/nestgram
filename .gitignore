@@ -32,6 +32,9 @@ yarn-error.log
 /packages/**/LICENSE
 *.tsbuildinfo
 
+# build
+dist
+
 .npmrc
 pnpm-lock.yaml
 .pnpm-store
