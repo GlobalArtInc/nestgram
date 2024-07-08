@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { On } from '../../../packages/core';
 import { CommandContext, Context, ContextOf } from '../../../packages/core/src/context';
 import { Telegraf } from 'telegraf';
-import { TextCommand } from '../../../packages/core/src/text-commands/decorators';
+import { TextCommand } from '../../../packages/core';
 
 @Injectable()
 export class AppService {
