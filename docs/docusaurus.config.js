@@ -42,8 +42,8 @@ const config = {
 	/** @type {import("@docusaurus/preset-classic").ThemeConfig} */
 	{
 		algolia: {
-			appId: 'N5JRHSHB9C',
-			apiKey: '6597eb15c31c17ecd0d7eba39b7a3848',
+			appId: '4S87ZJQ3HT',
+			apiKey: '4f8c9dd5d0635454b4fb1a589532cfca',
 			indexName: 'nestgram',
 			contextualSearch: true,
 			schedule: 'every 1 day at 3:00 pm'
