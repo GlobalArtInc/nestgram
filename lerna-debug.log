@@ -29,7 +29,7 @@
 18 verbose hasTags true
 19 silly getLastTag
 20 error initialize caught error
-21 error Error: fatal: No tags can describe '4bc9b7779de6ecf1c032bdeb23382f7fa12a93de'.
+21 error Error: fatal: No tags can describe '348135d5cb8733041eb23dbf7d45e32d1b4f4ec6'.
 21 error Try --always, or create some tags.
 21 error
 21 error     at module.exports.sync (/home/rozmarinus/development/nestgram/node_modules/.pnpm/execa@0.8.0/node_modules/execa/index.js:303:26)
