@@ -3,5 +3,10 @@
   "packages": [
     "packages/*"
   ],
-  "version": "1.0.2"
+  "command": {
+    "publish": {
+      "conventionalCommits": true
+    }
+  },
+  "version": "1.0.3"
 }

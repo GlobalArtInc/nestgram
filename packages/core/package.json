@@ -1,12 +1,12 @@
 {
 	"name": "@nestgramjs/core",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "A module for creating Telegram bots using NestJS, based on telegraf.js",
 	"author": "GlobalArt, Inc",
 	"license": "MIT",
 	"publishConfig": {
-    "access": "public"
-  },
+		"access": "public"
+	},
 	"dependencies": {
 		"tslib": "2.6.3"
 	},
