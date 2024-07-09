@@ -31,3 +31,23 @@ export class AppService {
 If all goes well, you should see something like this:
 
 ![Text Command](/img/content/text_command.png 'Text Command')
+
+## Arguments
+
+You can also use arguments with text commands. Arguments are the words after the command name.
+
+```typescript title="src/app.service.ts"
+import { Injectable } from '@nestjs/common';
+import { Context, TextCommand, TextCommandContext, Arguments } from '@nestgramjs/core';
+
+@Injectable()
+export class AppService {
+    @TextCommand({
+        name: 'start',
+        description: 'Start command!',
+    })
+    public onStart(@Context() [ctx]: TextCommandContext, @Arguments() args: string[]) {
+        return ctx.reply(args.join(' '));
+    }
+}
+```
