@@ -17,6 +17,6 @@ export class AppService {
     description: 'Displays this help message.',
   })
   onStart(@Context() [ctx]: CommandContext) {
-    ctx.reply('Start message');
+    ctx.reply('Start message triggered');
   }
 }
