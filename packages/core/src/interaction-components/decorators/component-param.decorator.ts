@@ -11,9 +11,9 @@ import { Deunionize } from 'telegraf/typings/core/helpers/deunionize';
  * @returns The component param decorator.
  */
 export const ComponentParam = createParamDecorator((data, ctx: ExecutionContext) => {
-  const nestcordContext = NestGramExecutionContext.create(ctx);
+  const nestgramContext = NestGramExecutionContext.create(ctx);
   const context = ctx.getArgByIndex(0) as Context<Deunionize<Update>>;
-  const discovery = nestcordContext.getDiscovery();
+  const discovery = nestgramContext.getDiscovery();
 
   if (!discovery.isInteractionComponent() ) {
     return null;
