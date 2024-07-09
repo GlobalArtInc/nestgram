@@ -8,6 +8,7 @@
 		"access": "public"
 	},
 	"dependencies": {
+		"path-to-regexp": "^7.0.0",
 		"tslib": "2.6.3"
 	},
 	"devDependencies": {

@@ -1,6 +1,7 @@
 import { Reflector } from '@nestjs/core';
 import { TextCommandDiscovery } from '../text-commands';
 import { ListenerDiscovery } from '../listeners';
+import { InteractionComponentDiscovery } from '../interaction-components/interaction-component.discovery';
 
 interface DiscoveredItem {
   class: new (...args: unknown[]) => unknown;
@@ -41,6 +42,10 @@ export abstract class NestGramBaseDiscovery<T = unknown> {
   }
 
   public isTextCommand(): this is TextCommandDiscovery {
+    return false;
+  }
+
+  public isInteractionComponent(): this is InteractionComponentDiscovery {
     return false;
   }
 
