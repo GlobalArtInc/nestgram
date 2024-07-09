@@ -1,1 +1,2 @@
-export * from './command.decorator';
+export * from './text-command.decorator';
+export * from './arguments.decorator';
