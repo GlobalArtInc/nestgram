@@ -14,7 +14,7 @@ Create a simple command handler for messages using `@TextCommand`.
 
 ```typescript title="src/app.service.ts"
 import { Injectable } from '@nestjs/common';
-import { Context, TextCommand, CommandContext } from '@nestgramjs/core';
+import { Context, TextCommand, TextCommandContext } from '@nestgramjs/core';
 
 @Injectable()
 export class AppService {

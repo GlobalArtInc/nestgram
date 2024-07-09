@@ -17,7 +17,7 @@ export class AppService {
     name: 'start',
     description: 'Displays this help message.',
   })
-  onStart(@Context() [ctx]: CommandContext) {
+  onStart(@Context() [ctx]: TextCommandContext) {
     const inlineKeyboard = Markup.inlineKeyboard([
       {
         text: 'Button 1',

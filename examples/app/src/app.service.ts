@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CommandContext, Context, ContextOf } from '../../../packages/core/src/context';
+import { TextCommandContext, Context, ContextOf } from '../../../packages/core/src/context';
 import { Telegraf } from 'telegraf';
 import { TextCommand } from '../../../packages/core';
 
@@ -16,7 +16,7 @@ export class AppService {
     name: 'start',
     description: 'Displays this help message.',
   })
-  onStart(@Context() [ctx]: CommandContext) {
+  onStart(@Context() [ctx]: TextCommandContext) {
     ctx.reply('Start message triggered');
   }
 }
