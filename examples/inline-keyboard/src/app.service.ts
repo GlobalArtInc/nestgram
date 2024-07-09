@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { Button, ButtonContext, ComponentParam, On } from '../../../packages/core';
-import { CommandContext, Context, ContextOf } from '../../../packages/core';
+import { Button, ButtonContext, ComponentParam, On, TextCommandContext } from '../../../packages/core';
+import { Context, ContextOf } from '../../../packages/core';
 import { Markup, Telegraf } from 'telegraf';
 import { TextCommand } from '../../../packages/core';
 
