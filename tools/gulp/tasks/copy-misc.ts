@@ -9,10 +9,7 @@ function copyMisc(): NodeJS.ReadWriteStream {
   const miscFiles = src(['Readme.md', 'LICENSE', '.npmignore']);
   // Since `dest()` does not take a string-array, we have to append it
   // ourselves
-  return packagePaths.reduce(
-    (stream, packagePath) => stream.pipe(dest(packagePath)),
-    miscFiles,
-  );
+  return packagePaths.reduce((stream, packagePath) => stream.pipe(dest(packagePath)), miscFiles);
 }
 
-task('copy-misc', copyMisc);
+task('copy-misc', async () => copyMisc);

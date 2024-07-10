@@ -9,10 +9,7 @@ import { containsPackageJson, getDirs } from '../util/task-helpers';
 
 const exec = promisify(childProcess.exec);
 
-async function executeNpmScriptInSamples(
-  script: string,
-  appendScript?: string,
-) {
+async function executeNpmScriptInSamples(script: string, appendScript?: string) {
   const directories = getDirs(samplePath);
 
   for await (const dir of directories) {
@@ -37,17 +34,11 @@ async function executeNpmScriptInSamples(
  * @param script script to execute
  * @param appendScript additional params appended to the script
  */
-async function executeNPMScriptInDirectory(
-  dir: string,
-  script: string,
-  appendScript?: string,
-) {
+async function executeNPMScriptInDirectory(dir: string, script: string, appendScript?: string) {
   const dirName = dir.replace(resolve(__dirname, '../../../'), '');
   log.info(`Running ${clc.blue(script)} in ${clc.magenta(dirName)}`);
   try {
-    const result = await exec(
-      `${script} --prefix ${dir} ${appendScript ? '-- ' + appendScript : ''}`,
-    );
+    const result = await exec(`${script} --prefix ${dir} ${appendScript ? '-- ' + appendScript : ''}`);
     // const result = await exec(`npx npm-check-updates -u`, {
     //   cwd: join(process.cwd(), dir),
     // });
@@ -74,13 +65,9 @@ async function executeNPMScriptInDirectory(
 task('install:samples', async () =>
   executeNpmScriptInSamples(
     // 'npm ci --no-audit --no-shrinkwrap --no-optional',
-    'npm install --legacy-peer-deps',
+    'pnpm install',
   ),
 );
-task('build:samples', async () => executeNpmScriptInSamples('npm run build'));
-task('test:samples', async () =>
-  executeNpmScriptInSamples('npm run test', '--passWithNoTests'),
-);
-task('test:e2e:samples', async () =>
-  executeNpmScriptInSamples('npm run test:e2e', '--passWithNoTests'),
-);
+task('build:samples', async () => executeNpmScriptInSamples('pnpm run build'));
+task('test:samples', async () => executeNpmScriptInSamples('pnpm run test', '--passWithNoTests'));
+task('test:e2e:samples', async () => executeNpmScriptInSamples('pnpm run test:e2e', '--passWithNoTests'));
