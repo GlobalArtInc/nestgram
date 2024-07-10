@@ -22,22 +22,14 @@ export class TextCommandsModule implements OnModuleInit, OnApplicationBootstrap 
   }
 
   public onApplicationBootstrap() {
-    this.client.on('message', async (ctx) => {
-      if (!ctx.message) {
-        return;
-      }
-      const content = ctx.message['text'].trim().toLowerCase();
-      if (content.charAt(0) !== '/') {
-        return;
-      }
-
-      const args = content.split(/ +/g);
-      const cmd = args.shift()?.substring(1);
-      if (!cmd) {
-        return;
-      }
-
-      return this.textCommandsService.get(cmd)?.execute([ctx]);
+    this.textCommandsService.cache.forEach((command) => {
+      const commandName = command.getName();
+      this.client.command(commandName, async (ctx) => {
+        const cmd = this.textCommandsService.get(commandName);
+        if (cmd) {
+          await cmd.execute([ctx]);
+        }
+      });
     });
   }
 }
