@@ -27,6 +27,14 @@
     "format": "prettier --write \"packages/**/*.ts\"",
     "upgrade": "npx npm-check-updates -u"
   },
+  "lint-staged": {
+    "**/*.ts": [
+      "prettier --ignore-path ./.prettierignore --write"
+    ],
+    "packages/**/*.json": [
+      "prettier --ignore-path ./.prettierignore --write"
+    ]
+  },
   "directories": {
     "packages": "packages",
     "examples": "examples",
