@@ -8,14 +8,22 @@ import { ExplorerService } from './nestgram-explorer.service';
 import { DiscoveryModule } from '@nestjs/core';
 import { TextCommandsModule } from './text-commands';
 import { InteractionComponentModule } from './interaction-components/interaction-component.module';
+import { MiddlewareModule } from './middleware';
 
 const Providers = Object.values(ProvidersMap);
 
 @Global()
 @Module({
-  imports: [DiscoveryModule, TextCommandsModule, InteractionComponentModule, ListenersModule],
+  imports: [DiscoveryModule, TextCommandsModule, InteractionComponentModule, ListenersModule, MiddlewareModule],
   providers: [ExplorerService, ...Providers],
-  exports: [ListenersModule, TextCommandsModule, InteractionComponentModule, ExplorerService, ...Providers],
+  exports: [
+    ListenersModule,
+    TextCommandsModule,
+    InteractionComponentModule,
+    MiddlewareModule,
+    ExplorerService,
+    ...Providers,
+  ],
 })
 export class NestGramModule extends ConfigurableModuleClass implements OnApplicationBootstrap, OnApplicationShutdown {
   public constructor(private readonly client: Telegraf) {

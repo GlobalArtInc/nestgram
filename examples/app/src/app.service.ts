@@ -1,15 +1,24 @@
 import { Injectable } from '@nestjs/common';
-import { TextCommandContext, Context, ContextOf } from '../../../packages/core/src/context';
+import {
+  TextCommandContext,
+  Context,
+  ContextOf,
+  MiddlewareContext,
+} from '../../../packages/core/src/context';
 import { Telegraf } from 'telegraf';
-import { Arguments, TextCommand } from '../../../packages/core';
+import { Arguments, Middleware, TextCommand } from '../../../packages/core';
 
 @Injectable()
 export class AppService {
-  constructor(private readonly client: Telegraf) {
-
-  }
+  constructor(private readonly client: Telegraf) {}
   getHello(): string {
     return 'Hello World!';
+  }
+
+  // testing middleware
+  @Middleware()
+  async testMiddleWare(@Context() [ctx, next]: MiddlewareContext) {
+    next();
   }
 
   @TextCommand({

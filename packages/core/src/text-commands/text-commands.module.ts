@@ -27,7 +27,7 @@ export class TextCommandsModule implements OnModuleInit, OnApplicationBootstrap 
       this.client.command(commandName, async (ctx) => {
         const cmd = this.textCommandsService.get(commandName);
         if (cmd) {
-          await cmd.execute([ctx]);
+          return cmd.execute([ctx]);
         }
       });
     });

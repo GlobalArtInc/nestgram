@@ -2,8 +2,23 @@ import { Context, NarrowedContext } from 'telegraf';
 import { NestGramEvents } from '../listeners';
 import { Update } from 'telegraf/typings/core/types/typegram';
 
+/**
+ * todo: transfer it on object for example:
+ *
+ * Context interface for NestGram.
+ * ButtonContext : {
+ *  context: Context<Update.MessageUpdate>;
+ *  //... other context properties
+ * }
+ * MiddlewareContext : {
+ *  context: Context<Update.CallbackQueryUpdate>;
+ *  next: () => Promise<void>;
+ * }
+ */
+
 export type TextCommandContext = [Context];
 export type ButtonContext = Context<Update>;
+export type MiddlewareContext = [Context<Update>, () => Promise<void>];
 
 export type UpdateMapping = {
   message: Update.MessageUpdate;
