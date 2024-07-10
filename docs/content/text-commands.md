@@ -22,8 +22,8 @@ export class AppService {
         name: 'start',
         description: 'Start command!',
     })
-    public onStart(@Context() [ctx]: TextCommandContext) {
-        return ctx.reply('Start command triggered!');
+    public onStart(@Context() { context }: TextCommandContext) {
+        return context.reply('Start command triggered!');
     }
 }
 ```
@@ -46,8 +46,8 @@ export class AppService {
         name: 'start',
         description: 'Start command!',
     })
-    public onStart(@Context() [ctx]: TextCommandContext, @Arguments() args: string[]) {
-        return ctx.reply(args.join(' '));
+    public onStart(@Context() { context }: TextCommandContext, @Arguments() args: string[]) {
+        return context.reply(args.join(' '));
     }
 }
 ```

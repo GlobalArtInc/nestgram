@@ -19,7 +19,7 @@ export class MiddlewareModule implements OnModuleInit {
     const explorer = this.explorerService.explore(Middleware.KEY);
 
     explorer.forEach((middleware) => {
-      this.client.use(async (ctx, next) => middleware.execute([ctx, next]));
+      this.client.use(async (context, next) => middleware.execute({ context, next }));
     });
   }
 }

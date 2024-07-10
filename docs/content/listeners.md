@@ -21,8 +21,8 @@ export class AppService {
     private readonly logger = new Logger(AppService.name);
 
     @On('message')
-    async onMessage(@Context() [ctx]: ContextOf<'message'>) {
-        this.logger.log(ctx);
+    async onMessage(@Context() { context }: ContextOf<'message'>) {
+        this.logger.log(context);
     }
 }
 ```

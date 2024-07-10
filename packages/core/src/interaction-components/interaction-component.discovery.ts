@@ -24,8 +24,8 @@ export class InteractionComponentDiscovery extends NestGramBaseDiscovery<Interac
     return true;
   }
 
-  public execute(ctx: Context) {
-    return super.execute(ctx);
+  public execute(context: Context) {
+    return super.execute({ context, discovery: this });
   }
 
   public toJSON(): Record<string, any> {

@@ -25,10 +25,10 @@ export class InteractionComponentModule implements OnModuleInit, OnApplicationBo
   }
 
   public onApplicationBootstrap() {
-    this.client.on('callback_query', (ctx) => {
+    this.client.on('callback_query', (context) => {
       return this.interactionComponentService
-        .get(InteractionComponentType.BUTTON, ctx.update.callback_query['data'])
-        ?.execute(ctx) as Promise<unknown[]>;
+        .get(InteractionComponentType.BUTTON, context.update?.callback_query?.['data'])
+        ?.execute(context) as Promise<unknown[]>;
     });
   }
 }

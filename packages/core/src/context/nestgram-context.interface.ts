@@ -1,24 +1,11 @@
-import { Context, NarrowedContext } from 'telegraf';
-import { NestGramEvents } from '../listeners';
+import { Context } from 'telegraf';
 import { Update } from 'telegraf/typings/core/types/typegram';
+import { TextCommandDiscovery } from '../text-commands';
+import { InteractionComponentDiscovery } from '../interaction-components';
 
-/**
- * todo: transfer it on object for example:
- *
- * Context interface for NestGram.
- * ButtonContext : {
- *  context: Context<Update.MessageUpdate>;
- *  //... other context properties
- * }
- * MiddlewareContext : {
- *  context: Context<Update.CallbackQueryUpdate>;
- *  next: () => Promise<void>;
- * }
- */
-
-export type TextCommandContext = [Context];
-export type ButtonContext = Context<Update>;
-export type MiddlewareContext = [Context<Update>, () => Promise<void>];
+export type TextCommandContext = { context: Context<Update.MessageUpdate>; discovery: TextCommandDiscovery };
+export type ButtonContext = { context: Context<Update.CallbackQueryUpdate>; discovery: InteractionComponentDiscovery };
+export type MiddlewareContext = { context: Context<Update>; next: () => Promise<void> };
 
 export type UpdateMapping = {
   message: Update.MessageUpdate;
@@ -38,4 +25,4 @@ export type UpdateMapping = {
   removed_chat_boost: Update.RemovedChatBoostUpdate;
 };
 
-export type ContextOf<K extends keyof UpdateMapping> = [Context<UpdateMapping[K]>];
+export type ContextOf<K extends keyof UpdateMapping> = { context: Context<UpdateMapping[K]> };

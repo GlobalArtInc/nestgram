@@ -17,7 +17,7 @@ export class AppService {
 
   // testing middleware
   @Middleware()
-  async testMiddleWare(@Context() [ctx, next]: MiddlewareContext) {
+  async testMiddleWare(@Context() { context, next }: MiddlewareContext) {
     next();
   }
 
@@ -25,7 +25,12 @@ export class AppService {
     name: 'start',
     description: 'Displays this help message.',
   })
-  onStart(@Context() [ctx]: TextCommandContext, @Arguments() args: string[]) {
-    ctx.reply(`Start message triggered\nArgs: ${args.join(', ') || 'none'}`);
+  onStart(
+    @Context() { context }: TextCommandContext,
+    @Arguments() args: string[],
+  ) {
+    context.reply(
+      `Start message triggered\nArgs: ${args.join(', ') || 'none'}`,
+    );
   }
 }

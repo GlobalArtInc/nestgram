@@ -24,10 +24,10 @@ export class TextCommandsModule implements OnModuleInit, OnApplicationBootstrap 
   public onApplicationBootstrap() {
     this.textCommandsService.cache.forEach((command) => {
       const commandName = command.getName();
-      this.client.command(commandName, async (ctx) => {
-        const cmd = this.textCommandsService.get(commandName);
-        if (cmd) {
-          return cmd.execute([ctx]);
+      this.client.command(commandName, async (context) => {
+        const discovery = this.textCommandsService.get(commandName);
+        if (discovery) {
+          return discovery.execute({ context, discovery });
         }
       });
     });
