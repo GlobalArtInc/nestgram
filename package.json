@@ -23,7 +23,7 @@
     "publish:next": "npm run prerelease && npm run build && ./node_modules/.bin/lerna publish --npm-tag=next --access public --skip-git -m \"chore(@nestgram) publish %s release\"",
     "publish:rc": "npm run prerelease && npm run build && ./node_modules/.bin/lerna publish --npm-tag=rc --access public -m \"chore(@nestgram) publish %s release\"",
     "publish:test": "npm run prerelease && npm run build && ./node_modules/.bin/lerna publish --force-publish --access public --npm-tag=test --skip-git -m \"chore(@nestgram) publish %s release\"",
-    "prepare": "husky ./.github/husky",
+    "prepare": "husky",
     "format": "prettier --write \"packages/**/*.ts\"",
     "upgrade": "npx npm-check-updates -u"
   },
