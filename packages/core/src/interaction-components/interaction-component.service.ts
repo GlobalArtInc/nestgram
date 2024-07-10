@@ -1,5 +1,5 @@
-import { Injectable, Logger } from "@nestjs/common";
-import { InteractionComponentDiscovery, InteractionComponentMeta } from "./interaction-component.discovery";
+import { Injectable, Logger } from '@nestjs/common';
+import { InteractionComponentDiscovery, InteractionComponentMeta } from './interaction-component.discovery';
 
 @Injectable()
 export class InteractionComponentService {
@@ -7,7 +7,10 @@ export class InteractionComponentService {
 
   public readonly cache = new Map<string, InteractionComponentDiscovery>();
 
-  private componentName(type: InteractionComponentMeta['type'], interactionId: InteractionComponentMeta['interactionId']): string {
+  private componentName(
+    type: InteractionComponentMeta['type'],
+    interactionId: InteractionComponentMeta['interactionId'],
+  ): string {
     return [type, interactionId].join('_');
   }
 

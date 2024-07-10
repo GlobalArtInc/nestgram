@@ -17,7 +17,7 @@
     "lint:fix": "concurrently 'npm run lint:packages -- --fix' 'npm run lint:integration -- --fix' 'npm run lint:spec -- --fix'",
 		"lint:packages": "eslint 'packages/**/**.ts' --ignore-pattern 'packages/**/*.spec.ts'",
     "prerelease": "gulp copy-misc",
-    "publish": "npm run prerelease && npm run build && ./node_modules/.bin/lerna publish --force-publish --npm-tag=latest --access public --exact -m \"chore(@nestgram) publish %s release\"",
+    "publish": "npm run prerelease && npm run build && ./node_modules/.bin/lerna publish --force-publish --access public --exact -m \"chore(@nestgram) publish %s release\"",
     "prepublishOnly": "npm run changelog | pbcopy",
     "publish:beta": "npm run prerelease && npm run build && ./node_modules/.bin/lerna publish --npm-tag=beta --access public -m \"chore(@nestgram) publish %s release\"",
     "publish:next": "npm run prerelease && npm run build && ./node_modules/.bin/lerna publish --npm-tag=next --access public --skip-git -m \"chore(@nestgram) publish %s release\"",

@@ -1,8 +1,8 @@
-import { match } from "path-to-regexp";
-import { NestGramBaseDiscovery } from "../context";
-import { InteractionComponentType } from "./interaction-component.enums";
-import { Context, NarrowedContext } from "telegraf";
-import { Update } from "telegraf/typings/core/types/typegram";
+import { match } from 'path-to-regexp';
+import { NestGramBaseDiscovery } from '../context';
+import { InteractionComponentType } from './interaction-component.enums';
+import { Context, NarrowedContext } from 'telegraf';
+import { Update } from 'telegraf/typings/core/types/typegram';
 
 export interface InteractionComponentMeta {
   type: InteractionComponentType;
@@ -21,7 +21,7 @@ export class InteractionComponentDiscovery extends NestGramBaseDiscovery<Interac
   }
 
   public isInteractionComponent(): this is InteractionComponentDiscovery {
-    return true; 
+    return true;
   }
 
   public execute(ctx: Context) {
@@ -31,5 +31,4 @@ export class InteractionComponentDiscovery extends NestGramBaseDiscovery<Interac
   public toJSON(): Record<string, any> {
     return this.meta;
   }
-  
 }

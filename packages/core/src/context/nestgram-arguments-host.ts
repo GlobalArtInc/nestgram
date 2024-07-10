@@ -2,7 +2,7 @@ import { ExecutionContextHost } from '@nestjs/core/helpers/execution-context-hos
 import { ArgumentsHost } from '@nestjs/common';
 import { NestGramContextType } from './nestgram-execution-context';
 import { NestGramBaseDiscovery } from '.';
-import { ContextOf } from './nestgram-context.interface';
+import { ContextOf, UpdateMapping } from './nestgram-context.interface';
 import { NestGramEvents } from '../listeners';
 
 export class NestGramArgumentsHost extends ExecutionContextHost {
@@ -17,9 +17,9 @@ export class NestGramArgumentsHost extends ExecutionContextHost {
     return super.getType();
   }
 
-  public getContext<T extends keyof NestGramEvents>(): ContextOf<T>;
+  public getContext<T extends keyof UpdateMapping>(): ContextOf<T>;
   public getContext<T>(): T;
-  public getContext<T extends keyof NestGramEvents>(): ContextOf<T> {
+  public getContext<T extends keyof UpdateMapping>(): ContextOf<T> {
     return this.getArgByIndex(0);
   }
 
