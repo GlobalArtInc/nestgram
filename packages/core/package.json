@@ -1,6 +1,6 @@
 {
 	"name": "@nestgramjs/core",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "A module for creating Telegram bots using NestJS, based on telegraf.js",
 	"author": "GlobalArt, Inc",
 	"license": "MIT",
