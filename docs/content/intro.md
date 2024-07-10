@@ -48,6 +48,6 @@ the [Issues](https://github.com/GlobalArtInc/nestgram/issues/new?assignees=&labe
 **Node.js 16.6.0 or newer is required.**
 
 ```bash npm2yarn
-$ npm install @nestgramjs/core telegram
+$ npm install @nestgramjs/core telegraf
 ```
 
