@@ -2,7 +2,6 @@
   "name": "@nestgramjs/core",
   "version": "1.0.2",
   "description": "A module for creating Telegram bots using NestJS, based on telegraf.js",
-  "private": false,
   "scripts": {
     "build": "tsc -b -v packages",
     "postbuild": "npm run move:node_modules",
