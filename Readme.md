@@ -4,7 +4,7 @@
    </h1>
    🤖 A module for creating <b><a href="https://telegram.org/">Telegram</a> bots</b> using <a href="https://nestjs.com">NestJS</a>, based on <a href="https://telegraf.js.org/">Telegraf</a>
    <br/><br/>
-   <a href="https://nestgram.globalart.dev">Documentation ✨</a> &emsp; <a href="https://github.com/GlobalArtInc/nestgram">Source code 🪡</a> &emsp; <a href="https://github.com/GlobalArtInc/nestgram/tree/master/examples">Examples 🛠️</a> &emsp; <a href="https://discord.gg/4Tc9hssSAv">Community 💬</a>
+   <a href="https://nestgram.globalart.dev">Documentation ✨</a> &emsp; <a href="https://github.com/GlobalArtInc/nestgram">Source code 🪡</a> &emsp; <a href="https://github.com/GlobalArtInc/nestgram/tree/main/examples">Examples 🛠️</a> &emsp; <a href="https://discord.gg/4Tc9hssSAv">Community 💬</a>
 </div>
 
 <br/>
